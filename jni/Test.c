@@ -3,7 +3,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "MethodHooker.h"
-
+#include "jni.h"
 #define log(a,b) __android_log_print(ANDROID_LOG_VERBOSE,a,b); // LOG类型:info
 #define log_(b) __android_log_print(ANDROID_LOG_VERBOSE,"JNI_LOG_INFO",b); // LOG类型:info
 
@@ -15,10 +15,10 @@ JNIEXPORT void JNICALL Java_com_example_testar_InjectClassloader_hookMethodNativ
 	//log("TestAE","start Inject other process");
 }
 
-JNIEXPORT jstring JNICALL test(JNIEnv *env, jclass clazz)  
-{  
+JNIEXPORT jstring JNICALL test(JNIEnv *env, jclass clazz)
+{
     //__android_log_print(ANDROID_LOG_VERBOSE, "tag", "call <native_printf> in java");
-    return (*env)->NewStringUTF(env,"haha");;
+    return (*env)->NewStringUTF(env,"haha");
 }
 
 HookInfo hookInfos[] = {

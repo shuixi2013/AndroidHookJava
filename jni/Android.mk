@@ -59,9 +59,9 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE:= inject
 
-LOCAL_SRC_FILES := inject.c shellcode.s
+LOCAL_SRC_FILES := inject.c shellcode.s 
 
-LOCAL_LDLIBS := 
+LOCAL_LDLIBS := -llog
 
 LOCAL_CFLAGS :=  
 
